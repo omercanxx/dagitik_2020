@@ -12,7 +12,9 @@ class connThread(threading.Thread):
 
     def run(self):
         self.conn.send("Sayi bulmaca oyununa hosgeldiniz!\n".encode())
+        self.conn.send(("{} caniniz var! ".format(live)).encode())
         isStarted = False
+        
         count = 0
         input = []
         while True:
@@ -24,27 +26,37 @@ class connThread(threading.Thread):
                 isStarted = True
                 n = random.randint(1, 99)
                 self.conn.send(str(n).encode())
-                self.conn.send("RDY".encode())
+                self.conn.send("RDY\n".encode())
             elif input[0] == "TIC":
                 self.conn.send("TOC\n".encode())
             elif input[0] == "TRY" and (isStarted != True):
                 self.conn.send("GRR\n".encode())
             elif(isStarted):
                 if input[0] == "TRY":
-                    self.conn.send(input[1].encode())
                     try:
                         guess = int(input[1])
                     except ValueError:
-                        self.conn.send("PRR".encode())
+                        self.conn.send("PRR\n".encode())                     
                     if guess < n:
-                        self.conn.send("LTH".encode())
+                        self.conn.send("LTH\n".encode())
+                        count += 1
+                        self.conn.send(("{} caniniz kaldi".format(live - count)).encode())
+                        if count == live:
+                            self.conn.send("LOSE\n".encode())
+                            time.sleep(1)
+                            break
                     elif guess > n:
-                        self.conn.send("GTH".encode())
+                        self.conn.send("GTH\n".encode())
+                        count += 1
+                        self.conn.send(("{} caniniz kaldi".format(live - count)).encode())
+                        if count == live:
+                            self.conn.send("LOSE\n".encode())
+                            time.sleep(1)
+                            break
                     else:
-                        self.conn.send("WIN".encode())  
+                        self.conn.send("WIN\n".encode())  
                         time.sleep(1)
                         break
-                    count += 1
                 elif input[0] == "TIC":
                     self.conn.send("TOC\n".encode())
                 elif input[0] == "QUI":
@@ -60,18 +72,19 @@ class connThread(threading.Thread):
     
 server_socket = socket.socket()
 
-live = 3
+
 ip = "0.0.0.0"
 port = int(sys.argv[1])
+live = int(sys.argv[2])
 addr_server = (ip, port)
 
 server_socket.bind(addr_server)
 server_socket.listen(5)
 
+
 counter = 0
 threads = []
-# live ve count değişkenlerini ekledim; ancak sürem yetmediği için bu iki değişken arasındaki ilişkiyi koduma ekleyemedim
-# akşama kadar BONUS 2 'yi tamamlayacağımı düşünüyorum
+
 while True:
     conn, addr = server_socket.accept()
     newConnThread = connThread(counter, conn, addr)
