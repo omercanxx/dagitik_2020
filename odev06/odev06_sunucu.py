@@ -5,19 +5,21 @@ import queue
 from datetime import datetime
 
 class rThread(threading.Thread):
-    def __init__(self, threadID, conn, c_addr, wQueue, uDict):
+    def __init__(self, threadID, conn, c_addr, qThread, uDict, isEntered, name):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.conn = conn
         self.c_addr = c_addr
-        self.wQueue = wQueue
+        self.qThread = qThread
         self.uDict = uDict
+        self.isEntered = isEntered
+        self.name = name
 
     def run(self):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         self.conn.sendall(current_time.encode('utf-8'))
-
+        
         while True:
             data = self.conn.recv(1024)
             data_str = data.decode().strip()
@@ -28,37 +30,72 @@ class rThread(threading.Thread):
 
     def incoming_parser(self, data):
         #Kullanıcı ismi kontrolu için
-        isEntered = False
         msg = data.strip().split(" ")
-
         if msg[0] == "NIC":
-            if msg[1] not in self.uDict.keys():
-                self.uDict[msg[1]] = self.conn
-                isEntered = True
-                self.wQueue.put("WEL")
+            #and self.isEntered == false ile aynı makineden aynı anda birden fazla girişi engelleniyor.
+            if msg[1] not in self.uDict.keys() and self.isEntered == False:
+                self.name = msg[1]
+                self.uDict[self.name] = self.qThread
+                self.isEntered = True
+                self.qThread.put("WEL")
             else:
-                self.wQueue.put("REJ")
+                self.qThread.put("REJ")
+        elif msg[0] == "QUI" and self.isEntered:
+            self.qThread.put("BYE")
+        elif msg[0] == "GLS" and self.isEntered:
+            self.qThread.put("LST ömer:ege:reşat:kıvanç")
+        elif msg[0] == "PIN" and self.isEntered:
+            self.qThread.put("PON")
+        elif msg[0] == "GNL" and self.isEntered:
+            seperator = " "
+            msg = seperator.join(msg[1:])
+            gnlmsg = "GNL"+ " "+ self.name+ ":" + msg
+            for value in self.uDict.values():
+                value.put(gnlmsg)
+                value.put("OKG")
+#            self.qThread.put(gnlmsg)
+#            self.qThread.put("OKG")
+        elif msg[0] == "PRV" and self.isEntered:
+            isOnline = False
+            prvmsg = msg[1].split(":")
+            for key in self.uDict.keys():
+                if key == prvmsg[0]:
+                    q = self.uDict.get(prvmsg[0])
+                    isOnline = True
+            if isOnline == True:
+                q.put("PRV" + " "+ self.name+ ":"+ prvmsg[1])
+            else :
+                self.qThread.put("NOP"+ " "+ prvmsg[0])
+        elif self.isEntered == False:
+            self.qThread.put("LRR")
+        elif msg[0] in ["ERR", "OKG", "OKP"]:
+            pass
         else:
-            self.wQueue.put("LRR")
+            self.qThread.put("ERR")
 
 class wThread(threading.Thread):
-    def __init__(self, tName, conn, queue):
+    def __init__(self, tName, conn, qThread):
         threading.Thread.__init__(self)
         self.conn = conn
-        self.queue = queue
+        self.qThread = qThread
         self.tName = tName
 
     def run(self):
         print(self.tName, "Starting.")
         while True:
-            data = self.queue.get()
+            data = self.qThread.get()
             self.conn.send(data.encode())
         print(self.tName, "Exiting.")
 
 
 def main():
     server_socket = socket.socket()
+    queueEmpty = queue.Queue
+    #Kullanıcı giriş kontrolü
     userDict = {}
+    isEntered = False
+    name = ""
+
     ip = "0.0.0.0"
     port = int(sys.argv[1])
     addr_server = (ip, port)
@@ -70,11 +107,11 @@ def main():
     threads = []
 
     while True:
-        q = queue.Queue()
 
+        queueThread = queue.Queue()
         conn, addr = server_socket.accept()
-        readThread = rThread(counter, conn, addr, q, userDict)
-        writeThread = wThread("WriteThread", conn, q)
+        readThread = rThread(counter, conn, addr, queueThread, userDict, isEntered, name)
+        writeThread = wThread("WriteThread", conn, queueThread)
 
         readThread.start()
         writeThread.start()
