@@ -2,15 +2,17 @@ import socket
 import sys
 import threading
 import queue
+import time
 from datetime import datetime
 
 class rThread(threading.Thread):
-    def __init__(self, threadID, conn, c_addr, qThread, uDict, isEntered, name):
+    def __init__(self, threadID, conn, c_addr, qThread, qLog,uDict, isEntered, name):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.conn = conn
         self.c_addr = c_addr
         self.qThread = qThread
+        self.qLog = qLog
         self.uDict = uDict
         self.isEntered = isEntered
         self.name = name
@@ -19,8 +21,9 @@ class rThread(threading.Thread):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         self.conn.sendall(current_time.encode('utf-8'))
-        
         while True:
+            time.sleep(10)
+            self.qThread.put("TIN")
             data = self.conn.recv(1024)
             data_str = data.decode().strip()
             print("%s : %s" %(self.c_addr, data_str))
@@ -37,15 +40,25 @@ class rThread(threading.Thread):
                 self.name = msg[1]
                 self.uDict[self.name] = self.qThread
                 self.isEntered = True
-                self.qThread.put("WEL")
+                self.qThread.put("WEL\n")
+                self.qLog.put("WEL")
+
             else:
-                self.qThread.put("REJ")
+                self.qThread.put("REJ\n")
+
         elif msg[0] == "QUI" and self.isEntered:
+            self.qThread.put("BYE"+" "+self.name)
+
+        elif msg[0] == "QUI" and self.isEntered == False:
             self.qThread.put("BYE")
+
         elif msg[0] == "GLS" and self.isEntered:
-            self.qThread.put("LST ömer:ege:reşat:kıvanç")
-        elif msg[0] == "PIN" and self.isEntered:
-            self.qThread.put("PON")
+            userList = []
+            for key in self.uDict.keys():
+                userList.append(key)
+            print(":".join(userList))
+            self.qThread.put("LST"+ " "+ ':'.join(userList))
+
         elif msg[0] == "GNL" and self.isEntered:
             seperator = " "
             msg = seperator.join(msg[1:])
@@ -53,23 +66,29 @@ class rThread(threading.Thread):
             for value in self.uDict.values():
                 value.put(gnlmsg)
                 value.put("OKG")
-#            self.qThread.put(gnlmsg)
-#            self.qThread.put("OKG")
+
         elif msg[0] == "PRV" and self.isEntered:
             isOnline = False
             prvmsg = msg[1].split(":")
+
             for key in self.uDict.keys():
                 if key == prvmsg[0]:
                     q = self.uDict.get(prvmsg[0])
                     isOnline = True
+
             if isOnline == True:
                 q.put("PRV" + " "+ self.name+ ":"+ prvmsg[1])
+                q.put("OKP")
+
             else :
                 self.qThread.put("NOP"+ " "+ prvmsg[0])
+
         elif self.isEntered == False:
             self.qThread.put("LRR")
-        elif msg[0] in ["ERR", "OKG", "OKP"]:
+
+        elif msg[0] in ["TON", "ERR", "OKG", "OKP"]:
             pass
+
         else:
             self.qThread.put("ERR")
 
@@ -82,15 +101,32 @@ class wThread(threading.Thread):
 
     def run(self):
         print(self.tName, "Starting.")
+
         while True:
             data = self.qThread.get()
             self.conn.send(data.encode())
         print(self.tName, "Exiting.")
 
+class lThread(threading.Thread):
+    def __init__(self, tName, q, f):
+        threading.Thread.__init__(self)
+        self.tName = tName
+        self.q = q
+        self.f = f
+    
+    def run(self):
+        print(self.tName, "Starting.")
 
+        while True:
+            data = self.q.get()
+            encodeData = data.encode()
+            self.f.write(encodeData)
+            print(encodeData)
 def main():
+    
     server_socket = socket.socket()
     queueEmpty = queue.Queue
+
     #Kullanıcı giriş kontrolü
     userDict = {}
     isEntered = False
@@ -105,17 +141,24 @@ def main():
 
     counter = 0
     threads = []
-
+    
+    #loglama işlemi için
+    file = open('log.txt', 'ab')
+    queueLog = queue.Queue()
+    logThread = lThread("LogThread", queueLog, file)
+    logThread.start()
+    
     while True:
 
         queueThread = queue.Queue()
         conn, addr = server_socket.accept()
-        readThread = rThread(counter, conn, addr, queueThread, userDict, isEntered, name)
+        readThread = rThread(counter, conn, addr, queueThread, queueLog, userDict, isEntered, name)
         writeThread = wThread("WriteThread", conn, queueThread)
 
         readThread.start()
         writeThread.start()
     server_socket.close()
+
 
 if __name__ == "__main__":
     main()
