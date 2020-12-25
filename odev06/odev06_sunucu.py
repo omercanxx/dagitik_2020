@@ -18,21 +18,20 @@ class rThread(threading.Thread):
         self.name = name
 
     def run(self):
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        self.conn.sendall(current_time.encode('utf-8'))
         while True:
-            time.sleep(10)
-            self.qThread.put("TIN")
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
+            self.conn.sendall(current_time.encode('utf-8'))
             data = self.conn.recv(1024)
             data_str = data.decode().strip()
             print("%s : %s" %(self.c_addr, data_str))
-            self.incoming_parser(data_str)
+            self.incoming_parser(data_str, current_time)
         self.conn.close()
         print("Thread %s kapanıyor" % self.threadID)
 
-    def incoming_parser(self, data):
+    def incoming_parser(self, data, time):
         #Kullanıcı ismi kontrolu için
+        
         msg = data.strip().split(" ")
         if msg[0] == "NIC":
             #and self.isEntered == false ile aynı makineden aynı anda birden fazla girişi engelleniyor.
@@ -41,32 +40,37 @@ class rThread(threading.Thread):
                 self.uDict[self.name] = self.qThread
                 self.isEntered = True
                 self.qThread.put("WEL\n")
-                self.qLog.put("WEL")
-
+                self.qLog.put("<"+time+"> " +"WEL " + "from server to " + self.name +"\n")
             else:
                 self.qThread.put("REJ\n")
+                self.qLog.put("<"+time+"> " +"REJ " + "from server to " + self.name +"\n")
 
         elif msg[0] == "QUI" and self.isEntered:
             self.qThread.put("BYE"+" "+self.name)
+            self.qLog.put("<"+time+"> " +"BYE " + "from server to " + self.name +"\n")
+            del self.uDict[self.name]
+            self.conn.close()
 
         elif msg[0] == "QUI" and self.isEntered == False:
             self.qThread.put("BYE")
-
+            self.conn.close()
+            self.qLog.put("<"+time+"> " + "BYE " + "from server to unnamed user\n")
         elif msg[0] == "GLS" and self.isEntered:
             userList = []
             for key in self.uDict.keys():
                 userList.append(key)
             print(":".join(userList))
-            self.qThread.put("LST"+ " "+ ':'.join(userList))
+            lst = "LST"+ " "+ ":".join(userList)
+            self.qThread.put(lst)
+            self.qLog.put("<"+time+"> "+lst + " from server to " + self.name +"\n")
 
         elif msg[0] == "GNL" and self.isEntered:
             seperator = " "
             msg = seperator.join(msg[1:])
-            gnlmsg = "GNL"+ " "+ self.name+ ":" + msg
+            gnlmsg = "GNL"+ " "+ self.name+ ":" + msg + "\n"
             for value in self.uDict.values():
                 value.put(gnlmsg)
-                value.put("OKG")
-
+            self.qLog.put("<"+time+"> " +msg + " from " + self.name + " to everyone\n")
         elif msg[0] == "PRV" and self.isEntered:
             isOnline = False
             prvmsg = msg[1].split(":")
@@ -78,19 +82,21 @@ class rThread(threading.Thread):
 
             if isOnline == True:
                 q.put("PRV" + " "+ self.name+ ":"+ prvmsg[1])
-                q.put("OKP")
+                self.qLog.put("<"+time+"> " +prvmsg[1] + " from " + self.name +" to " + prvmsg[0] +"\n")
 
             else :
                 self.qThread.put("NOP"+ " "+ prvmsg[0])
-
+                self.qLog.put("<"+time+"> " +"NOP " + "from server to " + self.name +"\n")                
         elif self.isEntered == False:
             self.qThread.put("LRR")
+            self.qLog.put("<"+time+"> " +"LRR " + "from server to unnamed user\n")
 
         elif msg[0] in ["TON", "ERR", "OKG", "OKP"]:
             pass
 
         else:
             self.qThread.put("ERR")
+            self.qLog.put("<"+time+"> " +"ERR " + "from server to " + self.name + "\n")
 
 class wThread(threading.Thread):
     def __init__(self, tName, conn, qThread):
@@ -108,20 +114,20 @@ class wThread(threading.Thread):
         print(self.tName, "Exiting.")
 
 class lThread(threading.Thread):
-    def __init__(self, tName, q, f):
+    def __init__(self, tName, q):
         threading.Thread.__init__(self)
         self.tName = tName
         self.q = q
-        self.f = f
-    
     def run(self):
         print(self.tName, "Starting.")
 
         while True:
+            file = open('log.txt', 'a+')
             data = self.q.get()
-            encodeData = data.encode()
-            self.f.write(encodeData)
-            print(encodeData)
+            print(data)
+            file.write(data)
+            file.close()
+
 def main():
     
     server_socket = socket.socket()
@@ -143,9 +149,9 @@ def main():
     threads = []
     
     #loglama işlemi için
-    file = open('log.txt', 'ab')
+    
     queueLog = queue.Queue()
-    logThread = lThread("LogThread", queueLog, file)
+    logThread = lThread("LogThread", queueLog)
     logThread.start()
     
     while True:
