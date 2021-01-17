@@ -1,0 +1,463 @@
+<21:28:15> WEL from server to omer
+<21:34:11> WEL from server to omer
+<21:35:56> WEL from server to omercan
+<21:36:00> LST omercan from server to omercan
+<21:36:02> LST omercan from server to omercan
+<23:09:33> WEL from server to omer
+<23:09:40> LST omer from server to omer
+<23:10:21> WEL from server to can
+<23:10:25> LST omer:can from server to can
+<23:12:39> WEL from server to omer
+<23:12:42> LST omer from server to omer
+<23:14:13> WEL from server to kimm
+<23:14:25> LST kimm from server to kimm
+<23:14:27> LST kimm from server to kimm
+<23:15:35> WEL from server to la
+<23:15:44> LST la from server to la
+<23:16:39> WEL from server to omer
+<23:17:18> WEL from server to omer
+<23:19:09> WEL from server to omer
+<23:19:36> WEL from server to kim
+<23:19:41> LST omer:kim from server to kim
+<23:21:39> WEL from server to omer
+<23:21:42> LST Omer:Basak:Kivanc:Ege:Resat from server to omer
+<23:52:33> REJ from server to 
+<23:52:44> REJ from server to 
+<00:01:41> WEL from server to Omer
+<00:04:30> REJ from server to 
+<00:10:24> LRR from server to unnamed user
+<00:10:51> LRR from server to unnamed user
+<00:10:51> LRR from server to unnamed user
+<00:10:51> LRR from server to unnamed user
+<00:10:51> LRR from server to unnamed user
+<00:11:43> LRR from server to unnamed user
+<00:12:03> LRR from server to unnamed user
+<00:14:21> LST Omer:Basak:Kivanc:Ege:Resat from server to 
+<00:14:26> BYE from server to unnamed user
+<00:19:51> REP from server to 
+<00:20:07> REP from server to 
+<00:20:14> REP from server to 
+<00:20:25> REP from server to 
+<00:20:31> REP from server to 
+<00:20:40> REJ from server to 
+<00:20:44> REP from server to 
+<00:21:05> REP from server to 
+<00:21:39> REP from server to 
+<00:22:55> WEL from server to Omer
+<00:22:59> BYE from server to Omer
+<00:24:50> LST Omer:Basak:Kivanc:Ege:Resat from server to 
+<14:34:53> LRR from server to unnamed user
+<14:35:00> LST Omer:Basak:Kivanc:Ege:Resat from server to 
+<14:35:07> WEL from server to Omer
+<14:35:27> ERR from server to Omer
+<14:35:51> LRR from server to unnamed user
+<14:35:52> REP from server to 
+<14:35:59> WEL from server to Omer
+<14:36:05> LST Omer:Basak:Kivanc:Ege:Resat from server to Omer
+<14:47:49> WEL from server to Omer
+<14:49:13> WEL from server to Omer
+<14:50:06> WEL from server to Omer
+<14:50:54> WEL from server to Omer
+<14:52:18> REP from server to 
+<14:52:23> REP from server to 
+<14:52:26> WEL from server to Omer
+<14:57:32> WEL from server to Omer
+<14:57:37> PRR from server to Omer
+<14:57:42> REP from server to Omer
+<15:12:07> WEL from server to Omer
+<15:12:11> LST Omer:Basak:Kivanc from server to Omer
+<15:15:59> WEL from server to Omer
+<15:16:03> LRT Omer's Room:Basak's Room from server to Omer
+<15:38:37> RER from server to unnamed user
+<15:38:46> PRR from server to unnamed user
+<15:39:46> WER from server to Cemil
+<15:39:51> WEL from server to Omer
+<15:41:08> WEL from server to Omer
+<15:42:27> WEL from server to Omer
+<15:42:30> WEL from server to Cemil
+<15:44:49> WEL from server to deneme
+<15:44:58> LST Omer:Basak:Kivanc from server to deneme
+<16:20:40> WEL from server to Ege
+<16:20:46> OKR from server to Ege
+<16:33:35> WEL from server to Omer
+<16:34:34> WEL from server to Omer
+<16:36:16> WEL from server to Omer
+<16:37:52> WEL from server to Omer
+<16:39:11> WEL from server to Omer
+<16:40:00> WEL from server to Omer
+<16:40:05> OKE from server to Omer
+<16:42:31> WEL from server to Kivanc
+<16:42:37> OKE from server to Kivanc
+<02:33:05> WEL from server to Omer
+<02:33:12> OKR from server to Omer
+<02:33:23> ERR from server to Omer
+<02:33:51> ERR from server to Omer
+<02:33:53> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can from server to Omer
+<02:39:57> WEL from server to Omer
+<02:40:04> OKE from server to Omer
+<02:46:44> WEL from server to Omer
+<02:49:51> WEL from server to Omer
+<02:49:58> OKE from server to Omer
+<02:50:39> WEL from server to Omer
+<02:50:42> OKE from server to Omer
+<02:52:04> WEL from server to Omer
+<02:53:47> WEL from server to Omer
+<02:53:50> OKE from server to Omer
+<02:53:54> LST Ege:Omer:Kivanc from server to Omer
+<02:53:55> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can from server to Omer
+<03:16:53> WEL from server to Omer
+<03:17:55> WEL from server to Omer
+<03:18:02> OKE from server to Omer
+<03:19:45> WEL from server to Omer
+<03:19:48> OKE from server to Omer
+<03:19:51> N M C from Omer to everyone
+<03:22:24> WEL from server to Omer
+<03:22:27> OKE from server to Omer
+<03:22:30> N b m from Omer to everyone
+<03:24:31> WEL from server to Omer
+<03:24:35> OKE from server to Omer
+<03:25:52> WEL from server to Omer
+<03:25:55> OKE from server to Omer
+<03:26:28> WEL from server to Omer
+<03:26:31> OKE from server to Omer
+<03:29:27> WEL from server to Omer
+<03:29:30> OKE from server to Omer
+<03:30:16> LRR from server to unnamed user
+<03:30:21> LRR from server to unnamed user
+<03:30:25> WEL from server to Omer
+<03:30:30> OKE from server to Omer
+<03:35:03> WEL from server to Omer
+<03:35:09> OKE from server to Omer
+<03:35:11> Ilk mesaj from Omer to everyone
+<20:04:32> LRR from server to unnamed user
+<20:04:39> WEL from server to Pamuk
+<20:04:52> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can from server to Pamuk
+<20:04:57> OKE from server to Pamuk
+<20:05:07> LST Omer:Pamuk from server to Pamuk
+<20:05:10> Naber beyler from Pamuk to everyone
+<17:32:40> WEL from server to Omer
+<17:33:04> WEL from server to Kivanc
+<17:33:12> OKE from server to Kivanc
+<17:32:50> OKE from server to Omer
+<17:33:24> Bu mesajý okuyabiliyor musun? from Omer to everyone
+<17:52:39> WEL from server to Omer
+<17:53:30> WEL from server to Omer
+<17:55:25> WEL from server to Omer
+<18:00:20> WEL from server to Omer
+<18:11:26> WEL from server to Omer
+<18:11:30> OKE from server to Omer
+<18:13:13> REJ from server to 
+<18:13:16> WEL from server to Omer
+<18:13:19> OKE from server to Omer
+<18:14:00> WEL from server to Omer
+<18:14:04> OKE from server to Omer
+<18:21:47> WEL from server to Omer
+<18:24:08> WEL from server to Omer
+<18:24:15> OKR from server to Omer
+<18:25:38> WEL from server to Omer
+<18:25:40> OKR from server to Omer
+<18:27:29> WEL from server to Omer
+<18:27:34> OKR from server to Omer
+<18:29:21> WEL from server to Omer
+<18:29:25> OKR from server to Omer
+<18:30:27> WEL from server to Omer
+<18:30:30> OKR from server to Omer
+<18:31:25> RER from server to unnamed user
+<18:31:32> WEL from server to reg
+<18:33:13> RER from server to unnamed user
+<18:33:25> WEL from server to cemil
+<18:34:02> WEL from server to Omer
+<18:34:06> OKE from server to Omer
+<18:33:32> OKE from server to cemil
+<18:34:12> Naber from cemil to everyone
+<18:41:31> WEL from server to Omer
+<18:42:14> WEL from server to Basak
+<18:47:42> WEL from server to OmerCan
+<18:52:23> WEL from server to Omer
+<18:52:26> OKE from server to Omer
+<18:52:37> naber from Omer to everyone
+<19:01:09> WEL from server to Omer
+<19:01:16> OKE from server to Omer
+<19:01:24> Nabersiniz from Omer to everyone
+<19:04:10> WEL from server to Omer
+<19:04:14> OKE from server to Omer
+<19:04:15> Nabersiniiiiz from Omer to everyone
+<19:05:30> WEL from server to OmerCan
+<19:05:33> OKE from server to OmerCan
+<19:05:40> iyiyim from OmerCan to everyone
+<19:06:15> WEL from server to Kivanc
+<19:06:20> OKE from server to Kivanc
+<19:07:56> WEL from server to OmerCan
+<19:07:45> WEL from server to Omer
+<19:08:05> OKE from server to Omer
+<19:07:59> OKE from server to OmerCan
+<19:11:41> WEL from server to Omer
+<19:11:43> OKE from server to Omer
+<19:13:17> WEL from server to Omer
+<19:13:24> OKE from server to Omer
+<19:17:01> WEL from server to Omer
+<19:17:04> OKE from server to Omer
+<19:36:31> WEL from server to OmerCan
+<19:36:36> OKE from server to OmerCan
+<20:21:23> WEL from server to Omer
+<20:21:28> OKE from server to Omer
+<20:21:12> WEL from server to OmerCan
+<20:21:35> OKE from server to OmerCan
+<20:23:04> WEL from server to Omer
+<20:23:16> WEL from server to OmerCan
+<20:24:00> WEL from server to Omer
+<20:24:03> OKE from server to Omer
+<20:23:53> WEL from server to OmerCan
+<20:24:10> OKE from server to OmerCan
+<20:24:12> hop from OmerCan to everyone
+<20:27:58> WEL from server to Omer
+<20:28:02> OKE from server to Omer
+<20:28:04> naber from Omer to everyone
+<20:28:05> naber from Omer to everyone
+<20:28:19> naber from Omer to everyone
+<20:28:20> naber from Omer to everyone
+<20:28:21> naber from Omer to everyone
+<20:28:21> naber from Omer to everyone
+<20:28:21> naber from Omer to everyone
+<20:28:22> naber from Omer to everyone
+<20:28:43> WEL from server to Omer
+<20:28:45> OKE from server to Omer
+<20:28:49> naber from Omer to everyone
+<20:29:42> WEL from server to Omer
+<20:29:44> OKE from server to Omer
+<20:29:49> Hop from Omer to everyone
+<20:30:45> WEL from server to Omer
+<20:30:48> OKE from server to Omer
+<20:30:57> HOP from Omer to everyone
+<20:31:57> WEL from server to Omer
+<20:32:00> OKE from server to Omer
+<20:32:02> naber from Omer to everyone
+<20:40:16> WEL from server to Omer
+<20:40:19> OKE from server to Omer
+<20:40:23> naber from Omer to everyone
+<20:40:27> HOP from Omer to everyone
+<20:43:03> WEL from server to Omer
+<20:43:06> OKE from server to Omer
+<20:43:08> naber from Omer to everyone
+<20:43:48> WEL from server to Omer
+<20:43:56> OKE from server to Omer
+<20:43:59> HOOOp from Omer to everyone
+<20:44:47> WEL from server to Omer
+<20:44:50> OKE from server to Omer
+<20:44:52> Naber from Omer to everyone
+<20:47:21> WEL from server to Omer
+<20:47:23> OKE from server to Omer
+<20:47:25> hop from Omer to everyone
+<20:48:17> WEL from server to Omer
+<20:48:20> OKE from server to Omer
+<20:50:28> WEL from server to Omer
+<20:50:31> OKE from server to Omer
+<20:52:15> WEL from server to Omer
+<20:52:18> OKE from server to Omer
+<20:53:20> WEL from server to Omer
+<20:53:23> OKE from server to Omer
+<20:53:24> hop from Omer to everyone
+<20:53:38> LRR from server to unnamed user
+<20:53:41> WEL from server to OmerCan
+<20:53:47> OKE from server to OmerCan
+<20:53:50> BEn Ömer can from OmerCan to everyone
+<21:07:56> WEL from server to Omer
+<21:07:48> WEL from server to Basak
+<21:08:06> OKE from server to Basak
+<21:08:13> HOP from Basak to everyone
+<21:08:00> OKE from server to Omer
+<21:09:35> NEE from Omer to everyone
+<21:23:57> WEL from server to Omer
+<21:24:00> OKE from server to Omer
+<21:24:23> WEL from server to OmerCan
+<21:24:27> OKE from server to OmerCan
+<21:25:06> WEL from server to Omer
+<21:25:10> OKE from server to Omer
+<21:25:04> WEL from server to Basak
+<21:25:19> OKE from server to Basak
+<21:26:34> WEL from server to Omer
+<21:26:39> OKE from server to Omer
+<21:26:31> WEL from server to OmerCan
+<21:28:12> WEL from server to Omer
+<21:28:10> WEL from server to OmerCan
+<21:28:21> OKE from server to OmerCan
+<21:28:15> OKE from server to Omer
+<21:31:31> WEL from server to OmerCan
+<21:31:23> WEL from server to OmerCan
+<21:31:40> OKE from server to OmerCan
+<21:31:35> OKE from server to OmerCan
+<21:32:36> WEL from server to OmerCan
+<21:32:39> OKE from server to OmerCan
+<21:32:29> WEL from server to Basak
+<21:32:49> OKE from server to Basak
+<21:35:00> WEL from server to OmerCan
+<21:34:57> WEL from server to Omer
+<21:35:08> OKE from server to Omer
+<21:35:03> OKE from server to OmerCan
+<21:34:54> WEL from server to Basak
+<21:35:18> OKE from server to Basak
+<21:35:22> Nabeeer from Basak to everyone
+<21:36:21> WEL from server to OmerCan
+<21:36:27> WEL from server to Omer
+<21:36:32> WEL from server to Basak
+<21:36:36> OKE from server to OmerCan
+<21:36:39> OKE from server to Omer
+<21:36:44> OKE from server to Basak
+<21:36:48> hooooooop from OmerCan to everyone
+<21:38:14> WEL from server to OmerCan
+<21:38:12> WEL from server to Omer
+<21:38:08> WEL from server to Basak
+<21:38:24> OKE from server to Basak
+<21:38:21> OKE from server to Omer
+<21:38:17> OKE from server to OmerCan
+<21:43:50> WEL from server to Omer
+<21:43:47> WEL from server to Basak
+<21:43:58> OKE from server to Basak
+<21:43:54> OKE from server to Omer
+<21:44:59> WEL from server to OmerCan
+<21:45:06> WEL from server to Basak
+<21:52:12> REP from server to 
+<21:52:15> WEL from server to Omer
+<22:00:03> PRR from server to unnamed user
+<22:00:09> RER from server to unnamed user
+<22:00:19> REP from server to 
+<22:00:27> WEL from server to OmerCan
+<22:01:51> WEL from server to OmerCan
+<22:02:01> REP from server to 
+<22:02:04> WEL from server to Basak
+<22:02:12> WEL from server to Omer
+<22:02:16> OKE from server to Omer
+<22:02:08> OKE from server to Basak
+<22:01:55> OKE from server to OmerCan
+<22:02:25> ERR from server to OmerCan
+<22:02:27> Hooooop from OmerCan to everyone
+<22:03:17> WEL from server to OmerCan
+<22:03:26> OKE from server to OmerCan
+<22:03:19> WEL from server to Omer
+<22:03:32> OKE from server to Omer
+<22:03:22> WEL from server to Basak
+<22:03:38> OKE from server to Basak
+<22:03:40> hooop from Basak to everyone
+<22:04:37> WEL from server to Omer
+<22:04:47> WEL from server to Basak
+<22:04:58> REP from server to 
+<22:05:06> WEL from server to Kivanc
+<22:05:09> OKE from server to Kivanc
+<22:04:41> OKE from server to Omer
+<22:04:49> OKE from server to Basak
+<22:14:56> WEL from server to OmerCan
+<22:15:07> OKE from server to OmerCan
+<22:19:20> WEL from server to OmerCan
+<22:19:26> OKE from server to OmerCan
+<22:20:07> WEL from server to Omer
+<22:20:11> OKE from server to Omer
+<22:21:16> WEL from server to Omer
+<22:21:18> OKE from server to Omer
+<22:22:34> WEL from server to Omer
+<22:22:38> OKE from server to Omer
+<22:24:38> WEL from server to Omer
+<22:24:42> OKE from server to Omer
+<22:25:52> WEL from server to Omer
+<22:25:55> OKE from server to Omer
+<22:27:07> WEL from server to Omer
+<22:27:09> OKE from server to Omer
+<22:28:47> WEL from server to Omer
+<22:28:49> OKE from server to Omer
+<22:28:44> WEL from server to Kivanc
+<22:28:57> OKE from server to Kivanc
+<22:28:41> WEL from server to Ege
+<22:29:06> OKE from server to Ege
+<22:28:30> WEL from server to Basak
+<22:29:15> OKE from server to Basak
+<22:29:18> Naber from Basak to everyone
+<22:31:40> WEL from server to Omer
+<22:31:38> WEL from server to Basak
+<22:31:35> WEL from server to Ege
+<22:31:54> OKE from server to Ege
+<22:31:47> OKE from server to Basak
+<22:31:43> OKE from server to Omer
+<22:32:06> HHHOOOOOPPP from Omer to everyone
+<22:33:08> WEL from server to Omer
+<22:33:06> WEL from server to Basak
+<22:32:58> WEL from server to Ege
+<22:33:21> OKE from server to Ege
+<22:33:16> OKE from server to Basak
+<22:33:12> OKE from server to Omer
+<22:35:26> WEL from server to Basak
+<22:35:28> OKE from server to Basak
+<22:35:16> WEL from server to Omer
+<22:35:39> OKE from server to Omer
+<13:35:39> WEL from server to Omer
+<13:35:51> OKE from server to Omer
+<13:36:04> LAT Omer's Room:EgeRoom:Can from server to Omer
+<13:36:06> OKE from server to Omer
+<13:36:15> OKQ from server to Omer
+<13:36:16> LAT Omer's Room:EgeRoom from server to Omer
+<13:36:19> OKE from server to Omer
+<13:36:21> LAT Omer's Room:EgeRoom:Can from server to Omer
+<13:56:04> WEL from server to Omer
+<13:56:06> OKE from server to Omer
+<14:16:36> WEL from server to Ege
+<14:16:52> OKE from server to Ege
+<14:16:55> LST Ege:Omer:Kivanc:OmerCan:Basak from server to Ege
+<14:55:35> WEL from server to ex
+<14:55:41> OKR from server to ex
+<14:56:05> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can:sil from server to ex
+<14:56:10> OKE from server to ex
+<14:57:14> WEL from server to ex
+<14:57:17> OKE from server to ex
+<14:57:20> OKD from server to ex
+<14:57:24> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can from server to ex
+<14:57:27> OKE from server to ex
+<14:57:52> WEL from server to Ege
+<14:57:55> OKE from server to Ege
+<14:57:58> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<14:58:02> OKK from server to Ege
+<14:58:10> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<14:58:12> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<14:57:33> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can from server to ex
+<15:01:25> WEL from server to Ege
+<15:01:28> NRR from server to Ege
+<15:01:30> OKE from server to Ege
+<15:01:32> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<15:16:24> WEL from server to Ege
+<15:16:28> OKE from server to Ege
+<15:16:31> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<15:16:34> OKK from server to Ege
+<15:16:37> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<15:17:20> WEL from server to Ege
+<15:17:23> OKE from server to Ege
+<15:17:25> LST Ege:Omer:Kivanc:OmerCan:Basak:ex from server to Ege
+<15:17:27> OKK from server to Ege
+<15:17:30> LST Ege:Omer:Kivanc:OmerCan:Basak from server to Ege
+<15:41:21> WEL from server to Basak
+<15:41:31> WEL from server to Omer
+<15:41:33> WEL from server to OmerCan
+<15:41:42> OKR from server to Basak
+<15:41:46> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can:Basak from server to Omer
+<15:42:06> OKE from server to Omer
+<15:41:51> OKE from server to OmerCan
+<15:42:04> LST Basak:Omer:OmerCan from server to Basak
+<15:42:19> OKK from server to Basak
+<15:42:25> ERR from server to Basak
+<15:42:26> LST Basak:Omer from server to Basak
+<15:42:16> OKE from server to OmerCan
+<15:42:36> Naber from OmerCan to everyone
+<15:42:39>iyidir senden from OmerCan to Omer<15:42:12> OKQ from server to Omer
+<15:42:28> LST Basak:OmerCan from server to Basak
+<15:43:03> OKD from server to Basak
+<15:43:07> LRT Omer's Room:Basak's Room:Kivanc's Room:EgeRoom:Can from server to Basak
+<17:30:09> WEL from server to ex
+<17:30:15> OKE from server to ex
+<17:30:36> WEL from server to Ege
+<17:30:40> OKE from server to Ege
+<17:30:43> OKB from server to Ege
+<17:30:46> LST Ege:Omer:Kivanc:OmerCan:Basak from server to Ege
+<17:36:58> WEL from server to ex
+<18:01:04> WEL from server to Ege
+<18:01:07> OKE from server to Ege
+<18:00:57> WEL from server to ex
+<18:01:15> EBK from server to ex
+<18:01:18> WEL from server to Omer
+<18:01:23> OKE from server to Omer
+<18:01:25>naber from Omer to Ege
