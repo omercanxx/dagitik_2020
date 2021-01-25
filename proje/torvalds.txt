@@ -1,0 +1,13 @@
+GLR
+NIC torvalds 1972
+#Şifre değişikliği
+PWD 1972 1974
+GLR
+GNL selam
+ENT gentoo
+GNL tekrar selam
+PRV tux:beni niye banladın?
+ENT ubuntu
+GLS
+GNL hey
+KCK ubuntu

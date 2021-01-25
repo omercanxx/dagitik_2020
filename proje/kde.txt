@@ -1,0 +1,9 @@
+REG kde 2020
+NIC kde 2020
+GLR
+ENT ubuntu
+GLR
+CRR plasma 5
+ENT plasma
+GLR
+DEL plasma

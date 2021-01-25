@@ -1,0 +1,14 @@
+REG tux herring
+REG tux 1994
+REG torvalds 1972
+NIC tux 1984
+NIC tux 1994
+#Kapasite boş geçilemez. 15 rastgele kullanıldı.
+CRR gentoo 15
+ENT gentoo
+KCK torvalds
+#Eğer torvalds kullanıcısı atıldıktan sonra odaya girmezse alttaki protokole cevap olarak NOP dönecektir. Yazılan kodda kullanıcıyı banlamak için kullanıcının o an odada bulunması gerekmektedir.
+BLK torvalds
+CRR ubuntu 15
+ENT ubuntu
+#Kullanıcıyı yönetici yapma yapılmadı.
